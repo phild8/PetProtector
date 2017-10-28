@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15dp"
     tools:context="edu.orangecoastcollege.cs273.petprotector.PetListActivity"
     android:orientation="vertical">
 
@@ -27,12 +28,40 @@
         android:onClick="selectPetImage"
         android:clickable="true"/>
 
+    <EditText
+        android:id="@+id/petNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"/>
+
+    <EditText
+        android:id="@+id/petDetailsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Pet Details"/>
+
+    <EditText
+        android:id="@+id/phoneNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Phone Number"/>
+
     <Button
         android:id="@+id/addPetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/add_button_text" />
+        android:text="@string/add_button_text"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>
