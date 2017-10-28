@@ -11,7 +11,7 @@
     tools:context="edu.orangecoastcollege.cs273.petprotector.PetDetailsActivity">
 
     <ImageView
-        android:id="@+id/petDetailsImageView"
+        android:id="@+id/petAdapterImageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center_horizontal"

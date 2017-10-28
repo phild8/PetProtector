@@ -12,7 +12,7 @@ import android.net.Uri;
  * getter and setters for the data types and two constructors.
  */
 public class Pet {
-    private int mId;
+    private long mId;
     private String mDetails;
     private Uri mImageUri;
     private String mName;
@@ -26,7 +26,7 @@ public class Pet {
      * @param name The name of the pet to be adopted.
      * @param phone The phone number of the adoption agency.
      */
-    public Pet(int id, String details, Uri imageUri, String name, String phone) {
+    public Pet(long id, String details, Uri imageUri, String name, String phone) {
         mId = id;
         mDetails = details;
         mImageUri = imageUri;
@@ -68,8 +68,16 @@ public class Pet {
      * Gets the pets ID.
      * @return mId
      */
-    public int getId() {
+    public long getId() {
         return mId;
+    }
+
+    /**
+     * Sets the pet's ID.
+     * @param id The new ID.
+     */
+    public void setId(long id) {
+        mId = id;
     }
 
     /**

@@ -100,7 +100,7 @@ public class PetListActivity extends AppCompatActivity {
     }
 
     /**
-     * gets a image from the URI string
+     * Gets an image from the URI string
      * @param context Any activity passed
      * @param resId ID of the resources
      * @return A concatenated URI string of package + typename + entryname
