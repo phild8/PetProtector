@@ -42,7 +42,7 @@ class DBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase database) {
-        String table = "CREATE TABLE " + DATABASE_TABLE + "("
+        String table = "CREATE TABLE " + DATABASE_TABLE + " ("
                 + KEY_FIELD_ID + " INTEGER PRIMARY KEY, "
                 + FIELD_DETAILS + " TEXT, "
                 + FIELD_IMAGE_NAME + " TEXT, "
@@ -71,11 +71,14 @@ class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        /*
         Uri petUri = newPet.getImageUri();
         String petUriStr = petUri.toString();
+        petUriStr;
+        */
 
         values.put(FIELD_DETAILS, newPet.getDetails());
-        values.put(FIELD_IMAGE_NAME, petUriStr);
+        values.put(FIELD_IMAGE_NAME, newPet.getImageUri().toString());
         values.put(FIELD_NAME, newPet.getName());
         values.put(FIELD_PHONE, newPet.getPhone());
 

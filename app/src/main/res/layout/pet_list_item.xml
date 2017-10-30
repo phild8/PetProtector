@@ -8,7 +8,7 @@
     >
 
     <ImageView
-        android:id="@+id/petThumbnailImageView"
+        android:id="@+id/petAdapterImageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/none"/>

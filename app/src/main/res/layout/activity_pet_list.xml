@@ -34,32 +34,36 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"/>
+        android:hint="@string/name">
+        <requestFocus/>
+    </EditText>
 
     <EditText
         android:id="@+id/petDetailsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Pet Details"/>
+        android:inputType="text"
+        android:hint="@string/details"/>
 
     <EditText
-        android:id="@+id/phoneNumberEditText"
+        android:id="@+id/petNumberEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Phone Number"/>
+        android:inputType="phone"
+        android:hint="@string/phone_number"/>
 
     <Button
         android:id="@+id/addPetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:onClick="addPet"
         android:text="@string/add_button_text"/>
 
     <ListView
+        android:id="@+id/petListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

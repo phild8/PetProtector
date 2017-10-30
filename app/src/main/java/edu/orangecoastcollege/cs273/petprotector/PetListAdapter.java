@@ -50,9 +50,9 @@ public class PetListAdapter extends ArrayAdapter<Pet> {
      */
     @NonNull
     @Override
-    public View getView(int pos, @Nullable View convertView, @Nullable ViewGroup parent){
+    public View getView(int pos, @Nullable View convertView, @NonNull ViewGroup parent){
 
-        Pet petSelect = mPetList.get(pos);
+        final Pet petSelect = mPetList.get(pos);
 
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(mResourceId, null);

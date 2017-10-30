@@ -11,12 +11,11 @@
     tools:context="edu.orangecoastcollege.cs273.petprotector.PetDetailsActivity">
 
     <ImageView
-        android:id="@+id/petAdapterImageView"
+        android:id="@+id/petDetailsImageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center_horizontal"
-        android:contentDescription="@string/pet_details_photo"
-        app:srcCompat="@drawable/none"/>
+        android:contentDescription="@string/pet_details_photo"/>
 
     <TextView
         android:id="@+id/petDetailsNameTextView"
