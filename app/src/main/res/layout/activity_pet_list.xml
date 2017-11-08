@@ -26,7 +26,8 @@
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/none"
         android:onClick="selectPetImage"
-        android:clickable="true"/>
+        android:clickable="true"
+        />
 
     <EditText
         android:id="@+id/petNameEditText"

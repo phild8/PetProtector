@@ -56,7 +56,8 @@ public class PetListActivity extends AppCompatActivity {
         mPetNumberEditText = (EditText) findViewById(R.id.petNumberEditText);
 
         mPetImageView = (ImageView) findViewById(R.id.petImageView);
-        mPetImageView.setImageURI(getUriFromResource(this, R.drawable.none));
+        mImageUri = getUriFromResource(this, R.drawable.none);
+        mPetImageView.setImageURI(mImageUri);
 
         db = new DBHelper(this);
         petList = db.getAllPets();
@@ -140,32 +141,45 @@ public class PetListActivity extends AppCompatActivity {
         return Uri.parse(uri);
     }
 
+    /**
+     * Adds a pet to the DataBase
+     * @param view The button click
+     */
     public void addPet(View view){
         String name = mPetNameEditText.getText().toString();
         String details = mPetDetailsEditText.getText().toString();
         String phone = mPetNumberEditText.getText().toString();
-        Uri pic = Uri.parse(mImageUri.toString());
-
 
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(details) || TextUtils.isEmpty(phone))
             Toast.makeText(this, "Please enter the pet's, name, details and a phone number", Toast.LENGTH_SHORT).show();
         else{
 
-            Pet newPet = new Pet(details, pic, name, phone);
+            Pet newPet = new Pet(details, mImageUri, name, phone);
 
             db.addPet(newPet);
             petList.add(newPet);
             petListAdapter.notifyDataSetChanged();
+
+            mPetNameEditText.setText("");
+            mPetDetailsEditText.setText("");
+            mPetNumberEditText.setText("");
+
+            mImageUri = getUriFromResource(this, R.drawable.none);
+            mPetImageView.setImageURI(mImageUri);
         }
     }
 
+    /**
+     * Allows the user to select a pet item and view the details in a new event.
+     * @param view The button click that selects the pet.
+     */
     public void viewPetDetails(View view) {
         Intent petDetailsIntent = new Intent(this, PetDetailsActivity.class);
 
         Pet selected = (Pet) view.getTag();
 
         petDetailsIntent.putExtra("Name", selected.getName());
-        petDetailsIntent.putExtra("Pic", selected.getImageUri());
+        petDetailsIntent.putExtra("Pic", selected.getImageUri().toString());
         petDetailsIntent.putExtra("Description", selected.getDetails());
         petDetailsIntent.putExtra("Phone", selected.getPhone());
 
