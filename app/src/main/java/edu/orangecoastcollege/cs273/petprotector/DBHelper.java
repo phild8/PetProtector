@@ -58,7 +58,7 @@ class DBHelper extends SQLiteOpenHelper {
      * @param newVersion The new database version.
      */
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
-        database.execSQL("DROP TABLE IF EXISTS" + DATABASE_TABLE);
+        database.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
 
         onCreate(database);
     }
@@ -98,13 +98,21 @@ class DBHelper extends SQLiteOpenHelper {
 
         Cursor cursor = db.query(
                 DATABASE_TABLE,
-                new String[]{KEY_FIELD_ID, FIELD_DETAILS, FIELD_IMAGE_NAME, FIELD_NAME, FIELD_PHONE},
+                new String[]{KEY_FIELD_ID,
+                        FIELD_DETAILS,
+                        FIELD_IMAGE_NAME,
+                        FIELD_NAME,
+                        FIELD_PHONE},
                 null, null, null, null, null);
 
         if(cursor.moveToFirst()){
             do {
-                Pet pet = new Pet(cursor.getInt(0), cursor.getString(1), Uri.parse(cursor.getString(2)),
-                        cursor.getString(3),cursor.getString(4));
+                Pet pet = new Pet(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        Uri.parse(cursor.getString(2)),
+                        cursor.getString(3),
+                        cursor.getString(4));
 
                 petList.add(pet);
             } while(cursor.moveToNext());

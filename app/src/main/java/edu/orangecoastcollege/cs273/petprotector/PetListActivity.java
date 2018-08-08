@@ -144,6 +144,7 @@ public class PetListActivity extends AppCompatActivity {
     /**
      * Adds a pet to the DataBase
      * @param view The button click
+     * @param view The button click
      */
     public void addPet(View view){
         String name = mPetNameEditText.getText().toString();

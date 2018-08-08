@@ -9,7 +9,7 @@ import android.net.Uri;
  * Created by Phil on 10/27/2017.
  *
  * The model, creates a pet object with types mId, mDetails, mImageUri, mName, and mPhone. Provides
- * getter and setters for the data types and two constructors.
+ * getter and setters for the data types and t       wo constructors.
  */
 public class Pet {
     private long mId;

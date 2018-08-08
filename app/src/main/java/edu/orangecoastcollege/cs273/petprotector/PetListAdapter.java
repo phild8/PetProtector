@@ -15,15 +15,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Phil on 10/28/2017.
- *
- * Helper class that provides a new adapter for the PetListActivity class.
- */
-public class PetListAdapter extends ArrayAdapter<Pet> {
+    /**
+     * Created by Phil on 10/28/2017.
+     *
+     * Helper class that provides a new adapter for the PetListActivity class.
+     */
+    public class PetListAdapter extends ArrayAdapter<Pet> {
 
-    private Context mContext;
-    private List<Pet> mPetList = new ArrayList<>();
+        private Context mContext;
+        private List<Pet> mPetList = new ArrayList<>();
     private int mResourceId;
 
     private LinearLayout linLay;
